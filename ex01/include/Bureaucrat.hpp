@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 10:43:29 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/11/26 15:27:52 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/11/26 15:19:44 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,6 @@ class Bureaucrat
 		// getters
 		const std::string &getName(void) const;
 		const int		&getGrade(void) const;
-
-		// increment / decrement grade
-		void	gradeUp(void);
-		void	gradeDown(void);
 
 		// exceptions
 		class GradeTooHighException: public std::exception {

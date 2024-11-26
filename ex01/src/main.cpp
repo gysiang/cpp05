@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 10:43:24 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/11/26 15:34:25 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/11/26 15:19:08 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
 	{
 		try
 		{
-			Bureaucrat Ivan("Ivan", 0);
+			Bureaucrat Ivan("Ivan", -2);
 			std::cout << Ivan << std::endl;
 		}
 		catch (std::exception &e)
@@ -31,7 +31,6 @@ int main()
 	/**
 	 * Test 2: Create a bureaucrat with too low grade
 	 */
-	std::cout << "\n";
 	{
 		try
 		{
@@ -46,28 +45,11 @@ int main()
 	/**
 	 * Test 3: Create a bureaucrat with a valid grade
 	 */
-	std::cout << "\n";
 	{
 		try
 		{
 			Bureaucrat Ivan("Ivan", 149);
 			std::cout << Ivan << std::endl;
-		}
-		catch (std::exception &e)
-		{
-			std::cout << e.what() << std::endl;
-		}
-	}
-	/**
-	 * Test 4: Create a bureaucrat with a min grade then gradeDown
-	 */
-	std::cout << "\n";
-	{
-		try
-		{
-			Bureaucrat Mike("Mike", 150);
-			Mike.gradeDown();
-			std::cout << Mike << std::endl;
 		}
 		catch (std::exception &e)
 		{
