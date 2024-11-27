@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 10:43:22 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/11/26 15:10:56 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/11/27 16:47:22 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &src) {
 
 Bureaucrat::~Bureaucrat() {}
 
+// copy assignment operator
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src) {
 	if (this != &src) {
 		grade = src.grade;
@@ -42,6 +43,20 @@ const std::string &Bureaucrat::getName() const {
 const int &Bureaucrat::getGrade() const {
 	return (grade);
 }
+
+void	Bureaucrat::signForm(Form &a) {
+	try
+	{
+		a.beSigned(*this);
+		std::cout << name << " signs " << a.getName() << " successfully." << std::endl;
+
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << name << " cannot sign " << a.getName() << " because of " << e.what() << std::endl;
+	}
+}
+
 
 char const *Bureaucrat::GradeTooHighException::what(void) const throw() {
 	return ("Grade is too high");
