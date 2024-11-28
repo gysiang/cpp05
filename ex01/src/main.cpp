@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 10:43:24 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/11/27 17:50:20 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/11/28 12:15:53 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,10 @@ int main()
 		try
 		{
 			Bureaucrat Mike("Mike", 140);
-			Form b("Form Two", 100, 100);
-			Mike.signForm(b);
+			Form b("Form Two", 1, 150);
+			std::cout << Mike << std::endl;
 			std::cout << b << std::endl;
+			Mike.signForm(b);
 		}
 		catch(std::exception &e)
 		{
