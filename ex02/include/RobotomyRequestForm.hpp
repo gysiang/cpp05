@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 12:24:21 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/11/29 11:13:13 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/11/29 12:56:13 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm(const RobotomyRequestForm &src);
 		~RobotomyRequestForm();
 		RobotomyRequestForm &operator=(const RobotomyRequestForm &src);
+
+		void beExecuted(const Bureaucrat &a) const;
 
 
 };
