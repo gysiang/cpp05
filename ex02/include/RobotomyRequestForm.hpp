@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 12:24:21 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/11/28 20:54:17 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/11/29 11:13:13 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define ROBOTOMY_REQUEST_FORM_HPP
 
 # include "AForm.hpp"
+# define ROBO_SIGN 72
+# define ROBO_EXE 45
 
 class RobotomyRequestForm : public AForm
 {
