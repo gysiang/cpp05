@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 12:28:55 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/11/29 13:09:22 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/11/29 15:55:49 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &s
 	return (*this);
 }
 
-void RobotomyRequestForm::beExecuted(const Bureaucrat &a) const {
-	// checks for bureaucrat exe level to see if can sign
-	 if (this->getExeGrade() < a.getGrade())
-	 	throw GradeTooLowException();
+void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
+	if (this->getN())
+		throw FormAlreadySigned();
+	if (this->getExeGrade() < executor.getGrade())
+		throw GradeTooLowException();
 	int n = rand() % 2 + 1;
 	std::cout << "Make some drilling noises....." << std::endl;
 	if (n == 1)

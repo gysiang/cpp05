@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 22:10:56 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/11/28 13:22:21 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/11/29 15:54:34 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,10 @@ const int &AForm::getExeGrade(void) const {
 	return (exe_grade);
 }
 
+const int &AForm::getN(void) const {
+	return (n);
+}
+
 void	AForm::beSigned(Bureaucrat &a) {
 	if (a.getGrade() > sign_grade)
 		throw GradeTooLowException();
@@ -76,6 +80,10 @@ char const *AForm::GradeTooHighException::what(void) const throw() {
 
 char const *AForm::GradeTooLowException::what(void) const throw() {
 	return ("Grade is too low");
+}
+
+char const *AForm::FormAlreadySigned::what(void) const throw() {
+	return ("Form has already been signed!");
 }
 
 std::ostream	&operator<<(std::ostream &str, AForm const &b) {

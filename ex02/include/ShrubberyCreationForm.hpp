@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 12:23:29 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/11/28 20:54:15 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/11/29 15:50:53 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm(const ShrubberyCreationForm &src);
 		~ShrubberyCreationForm();
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &src);
+
+		void execute(const Bureaucrat &executor) const;
 
 };
 
