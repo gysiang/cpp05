@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 16:24:31 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/11/29 15:54:07 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/05 13:12:44 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+
 
 class Bureaucrat;
 
@@ -44,7 +45,6 @@ class AForm
 		void	beSigned(Bureaucrat &a);
 		void	setSignGrade(const int a);
 		void	setExeGrade(const int a);
-		// turns this class into abstract
 		virtual void execute(const Bureaucrat &executor) const = 0;
 
 		// exceptions

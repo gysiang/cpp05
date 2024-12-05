@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 10:43:22 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/11/28 12:56:26 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/05 12:00:51 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,19 +43,31 @@ const int &Bureaucrat::getGrade() const {
 	return (grade);
 }
 
-void	Bureaucrat::signForm(AForm &a) {
+void	Bureaucrat::signForm(AForm &form) {
 	try
 	{
-		a.beSigned(*this);
-		std::cout << name << " signs " << a.getName() << " successfully." << std::endl;
+		form.beSigned(*this);
+		std::cout << name << " signs " << form.getName() << " successfully." << std::endl;
 
 	}
 	catch(const std::exception& e)
 	{
-		std::cout << name << " cannot sign " << a.getName() << " because of " << e.what() << std::endl;
+		std::cout << name << " cannot sign " << form.getName() << " because of " << e.what() << std::endl;
 	}
 }
 
+void	Bureaucrat::executeForm(AForm const &form) {
+
+	try
+	{
+		form.execute(*this);
+		std::cout << name << " executes " << form.getName() << " successfully." << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << name << " cannot execute " << form.getName() << " because of " << e.what() << std::endl;
+	}
+}
 
 char const *Bureaucrat::GradeTooHighException::what(void) const throw() {
 	return ("Grade is too high");

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 10:43:29 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/11/29 15:50:45 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/05 11:36:31 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class Bureaucrat
 
 		// setters
 		void	signForm(AForm &a);
+		void	executeForm(AForm const &form);
 
 		// exceptions
 		class GradeTooHighException: public std::exception {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 12:23:29 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/11/29 15:50:53 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/05 13:12:37 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,15 @@ class ShrubberyCreationForm : public AForm
 		std::string	target;
 
 	public:
-		//default
+		//default methods
 		ShrubberyCreationForm();
 		ShrubberyCreationForm(const std::string &target);
 		ShrubberyCreationForm(const ShrubberyCreationForm &src);
 		~ShrubberyCreationForm();
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &src);
-
+		// public methods
 		void execute(const Bureaucrat &executor) const;
-
+		static const std::string asciiTree;
 };
 
 
