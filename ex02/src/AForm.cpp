@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 22:10:56 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/11/29 15:54:34 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/05 15:17:35 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ AForm::AForm(const std::string name, const int sign_grade, const int exe_grade) 
 	if (sign_grade < HIGHEST_GRADE || exe_grade < HIGHEST_GRADE) {
 		throw GradeTooHighException();
 	}
-	if (sign_grade > LOWEST_GRADE || exe_grade < LOWEST_GRADE) {
+	if (sign_grade > LOWEST_GRADE || exe_grade > LOWEST_GRADE) {
 		throw GradeTooLowException();
 	}
 }
@@ -52,7 +52,7 @@ const int &AForm::getExeGrade(void) const {
 	return (exe_grade);
 }
 
-const int &AForm::getN(void) const {
+int AForm::getN(void) const {
 	return (n);
 }
 
@@ -65,6 +65,19 @@ void	AForm::beSigned(Bureaucrat &a) {
 		std::cout << a.getName() << " successfully signed " << name << std::endl;
 	}
 }
+
+void	AForm::execute(const Bureaucrat &executor) const {
+	if (!this->getN())
+		throw FormNotSigned();
+	else if (this->exe_grade < executor.getGrade())
+		throw GradeTooLowException();
+	else
+	{
+		this->beExecuted(executor);
+		std::cout << executor.getName() << " executes form: " << this->getName() << std::endl;
+	}
+}
+
 
 void	AForm::setSignGrade(const int a) {
 	sign_grade = a;
@@ -80,6 +93,10 @@ char const *AForm::GradeTooHighException::what(void) const throw() {
 
 char const *AForm::GradeTooLowException::what(void) const throw() {
 	return ("Grade is too low");
+}
+
+char const *AForm::FormNotSigned::what(void) const throw() {
+	return ("Form has not been signed!");
 }
 
 char const *AForm::FormAlreadySigned::what(void) const throw() {

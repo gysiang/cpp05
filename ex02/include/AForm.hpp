@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 16:24:31 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/05 13:12:44 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/05 14:17:47 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,14 @@ class AForm
 		const std::string &getName(void) const;
 		const int &getSignGrade(void) const;
 		const int &getExeGrade(void) const;
-		const int &getN(void) const;
+		int getN(void) const;
 
 		// setters
 		void	beSigned(Bureaucrat &a);
 		void	setSignGrade(const int a);
 		void	setExeGrade(const int a);
-		virtual void execute(const Bureaucrat &executor) const = 0;
+		void	execute(const Bureaucrat &executor) const;
+		virtual void beExecuted(Bureaucrat const &Bureaucrat) const = 0;
 
 		// exceptions
 		class GradeTooHighException: public std::exception {
@@ -58,6 +59,11 @@ class AForm
 		};
 
 		class FormAlreadySigned: public std::exception {
+			public:
+				virtual char const	*what(void) const throw();
+		};
+
+		class FormNotSigned: public std::exception {
 			public:
 				virtual char const	*what(void) const throw();
 		};

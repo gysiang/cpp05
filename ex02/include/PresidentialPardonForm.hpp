@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 12:25:39 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/11/29 15:51:18 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/05 14:46:37 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class PresidentialPardonForm : public AForm
 		~PresidentialPardonForm();
 		PresidentialPardonForm &operator=(const PresidentialPardonForm &src);
 
-	void execute(const Bureaucrat &executor) const;
+	void beExecuted(const Bureaucrat &executor) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 12:23:29 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/05 13:12:37 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/05 14:26:25 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ class ShrubberyCreationForm : public AForm
 		~ShrubberyCreationForm();
 		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &src);
 		// public methods
-		void execute(const Bureaucrat &executor) const;
+		void beExecuted(const Bureaucrat &bureaucrat) const;
 		static const std::string asciiTree;
 };
 

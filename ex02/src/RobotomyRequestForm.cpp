@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 12:28:55 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/05 12:10:02 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/05 14:59:02 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,8 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &s
 	return (*this);
 }
 
-void RobotomyRequestForm::execute(const Bureaucrat &executor) const {
-	if (this->getN())
-		throw FormAlreadySigned();
-	if (this->getExeGrade() < executor.getGrade())
-		throw GradeTooLowException();
+void RobotomyRequestForm::beExecuted(const Bureaucrat &bureaucrat) const {
+	(void) bureaucrat;
 	int n = rand() % 2 + 1;
 	std::cout << "Make some drilling noises....." << std::endl;
 	if (n == 1)
