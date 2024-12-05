@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 12:29:11 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/05 14:26:32 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/05 15:57:59 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 }
 
 void ShrubberyCreationForm::beExecuted(const Bureaucrat &bureaucrat) const {
-	std::string fileName = target + "_shruberry";
+	std::string fileName = target + "_shrubberry";
 	std::ofstream outFile(fileName.c_str());
 
 	if (!outFile)
@@ -40,22 +40,22 @@ void ShrubberyCreationForm::beExecuted(const Bureaucrat &bureaucrat) const {
 		return;
 	}
 
-	outFile << asciiTree;
+	outFile << asciiTree << std::endl;
 	outFile.close();
 	std::cout << bureaucrat.getName() << " successfully created a shrubbery" << std::endl;
 }
 
 const std::string ShrubberyCreationForm::asciiTree =
-"          &&& &&  & &&"
-"      && &/&||& ()|/ @, &&"
-"      &/(/&/&||/& /_/)_&/_&"
-"   &() &/&|()|/&/ '% & ()"
-"  &_|_&&_|_|& |&&/&__%_/_& &&"
-"&&   && & &| &| /& & % ()& /&&"
-" ()&_---()&_|||&&-&&--%---()~"
-"     &&      |||"
-"             |||"
-"             |||"
-"             |||"
-"       , -=-~  .-^- _";
+"          &&& &&  & &&\n"
+"      && &/&||& ()|/ @, &&\n"
+"      &/(/&/&||/& /_/)_&/_&\n"
+"   &() &/&|()|/&/ '% & ()\n"
+"  &_|_&&_|_|& |&&/&__%_/_& &&\n"
+"&&   && & &| &| /& & % ()& /&&\n"
+" ()&_---()&_|||&&-&&--%---()~\n"
+"     &&      |||\n"
+"             |||\n"
+"             |||\n"
+"             |||\n"
+"       , -=-~  .-^- _\n";
 
