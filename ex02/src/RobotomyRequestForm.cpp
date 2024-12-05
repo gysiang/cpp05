@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 12:28:55 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/05 16:02:48 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:06:28 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void RobotomyRequestForm::beExecuted(const Bureaucrat &bureaucrat) const {
 	std::cout << n << std::endl;
 	std::cout << "Make some drilling noises....." << std::endl;
 	if (n == 1)
-		std::cout << target << ": has been robotomized" << std::endl;
+		std::cout << "\033[1;33m" << target << ": has been robotomized.\033[0m" << std::endl;
 	else
-		std::cout << target << ": robotomy has failed." << std::endl;
+		std::cout << "\033[1;33m" << target << ": robotomy has failed.\033[0m" << std::endl;
 }

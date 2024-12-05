@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 10:43:24 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/05 15:53:27 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:12:20 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 int main()
 {
 	/**
-	 * Test 1: Create a shruberry form and check if the shruberry is created
+	 * Test 1: Create all the forms and make sure all are signed and executed.
 	 */
 	{
 		PresidentialPardonForm a("Garden");
@@ -44,5 +44,23 @@ int main()
 		}
 	}
 	std::cout << std::endl;
+	/**
+	 * Test 2: Execute forms without signing.
+	 */
+	try
+	{
+		PresidentialPardonForm d("Garden");
+		ShrubberyCreationForm e("Garden");
+		RobotomyRequestForm f("Garden");
+		Bureaucrat bike("Bike", 5);
+
+		bike.executeForm(d);
+		bike.executeForm(e);
+		bike.executeForm(f);
+	}
+	catch(std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 
 }

@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 12:28:41 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/05 15:20:09 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:05:50 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 
 void PresidentialPardonForm::beExecuted(Bureaucrat const &Bureaucrat) const {
 	(void) Bureaucrat;
-	std::cout << "\033[1;33m" <<target << " has been pardoned by Zaphod Beeblebrox.\033[0m"<< std::endl;
+	std::cout << "\033[1;33m" << target << " has been pardoned by Zaphod Beeblebrox.\033[0m"<< std::endl;
 }
