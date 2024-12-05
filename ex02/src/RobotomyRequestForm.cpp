@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 12:28:55 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/05 14:59:02 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:02:48 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &s
 
 void RobotomyRequestForm::beExecuted(const Bureaucrat &bureaucrat) const {
 	(void) bureaucrat;
+	srand(time(NULL));
 	int n = rand() % 2 + 1;
+	std::cout << n << std::endl;
 	std::cout << "Make some drilling noises....." << std::endl;
 	if (n == 1)
 		std::cout << target << ": has been robotomized" << std::endl;

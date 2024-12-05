@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 12:24:21 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/05 14:53:33 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:03:05 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "AForm.hpp"
 # include <cstdlib>
+# include <ctime>
 
 # define ROBO_SIGN 72
 # define ROBO_EXE 45
