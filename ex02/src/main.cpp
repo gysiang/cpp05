@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyongsi@student.42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 10:43:24 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/12/05 16:12:20 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:17:26 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,26 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
+	std::cout << std::endl;
+	/**
+	 * Test 3: Execute without enough grade
+	 */
+	try
+	{
+		PresidentialPardonForm h("Garden");
+		ShrubberyCreationForm i("Garden");
+		RobotomyRequestForm j("Garden");
+		Bureaucrat rike("Rike", 150);
 
+		rike.signForm(h);
+		rike.executeForm(h);
+		rike.signForm(i);
+		rike.executeForm(i);
+		rike.signForm(j);
+		rike.executeForm(j);
+	}
+	catch(std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }
