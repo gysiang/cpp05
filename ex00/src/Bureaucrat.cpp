@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 10:43:22 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/11/26 15:32:03 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/14 22:48:52 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,26 @@ char const *Bureaucrat::GradeTooLowException::what(void) const throw() {
 }
 
 void	Bureaucrat::gradeUp(void) {
-	grade--;
-	if (grade < HIGHEST_GRADE) {
-		throw GradeTooHighException();
+	if (grade == HIGHEST_GRADE)
+		std::cout << "Promotion failed as " << name << " is already at the highest grade!" << std::endl;
+	else
+	{
+		grade--;
+		if (grade < HIGHEST_GRADE) {
+			throw GradeTooHighException();
+		}
 	}
 }
 
 void	Bureaucrat::gradeDown(void) {
-	grade++;
-	if (grade > LOWEST_GRADE) {
-		throw GradeTooLowException();
+	if (grade == LOWEST_GRADE)
+		std::cout << "Demotion failed as " << name << " is already at the lowest grade!" << std::endl;
+	else
+	{
+		grade++;
+		if (grade > LOWEST_GRADE) {
+			throw GradeTooLowException();
+		}
 	}
 }
 

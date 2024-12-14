@@ -6,7 +6,7 @@
 /*   By: gyong-si <gyong-si@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 10:43:24 by gyong-si          #+#    #+#             */
-/*   Updated: 2024/11/26 15:34:25 by gyong-si         ###   ########.fr       */
+/*   Updated: 2024/12/14 22:49:11 by gyong-si         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int main()
 	{
 		try
 		{
-			Bureaucrat Mike("Mike", 150);
+			Bureaucrat Mike("Mike", 149);
 			Mike.gradeDown();
 			std::cout << Mike << std::endl;
 		}
